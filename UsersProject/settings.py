@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'UsersApi',
+    'phonenumber_field',
 ]
 
 MIDDLEWARE = [
@@ -78,8 +79,10 @@ WSGI_APPLICATION = 'UsersProject.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'djongo',
+        'NAME': 'users_db',
+        'HOST': '127.0.0.1',
+        'PORT': 27017,
     }
 }
 
@@ -126,3 +129,4 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+APPEND_SLASH = False
