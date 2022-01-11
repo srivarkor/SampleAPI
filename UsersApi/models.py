@@ -6,5 +6,6 @@ class User(models.Model):
     lastName = models.CharField(max_length=100)
     phoneNumber = PhoneNumberField()
     email = models.EmailField(max_length=255)
+    category = models.CharField(max_length=50,default='normaluser')
     def __str__(self):
         return self.firstName
